@@ -1,314 +1,209 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Batterie de Stockage Solaire LiFePO₄ : Guide Complet 2024 | batterie-stockage.fr</title>
-  <meta name="description" content="Découvrez tout ce qu'il faut savoir sur les batteries de stockage solaire LiFePO₄ : technologie, avantages, comparatif, installation et économies réalisables. Guide expert 2024.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="batterie-stockage.fr">
-  <link rel="canonical" href="https://www.batterie-stockage.fr/blog/batterie-stockage-solaire-lifepo4-guide-complet.html">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Onduleur Deye : quelle batterie compatible en 2026 ? | Batterie-Stockage.fr</title>
+<meta name="description" content="Quelle batterie choisir avec un onduleur Deye ? Compatibilité LiFePO₄, protocoles CAN/RS485, paramétrage BMS — guide complet 2026." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.batterie-stockage.fr/blog/onduleur-deye-batterie-compatible.html" />
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap");
+:root{--ink-950:#07100b;--ink-900:#0b1610;--ink-850:#101b15;--ink-800:#15231c;--brand-500:#2e8b67;--brand-400:#5fb38e;--brand-300:#95cdb3;--accent:#c98b4d;--accent-hot:#e5a463;--line:color-mix(in oklab,#1a4d3a 18%,transparent);--line-strong:color-mix(in oklab,#1a4d3a 38%,transparent);--font-display:"Bricolage Grotesque",system-ui,sans-serif;--font-body:"Geist",system-ui,sans-serif;--font-mono:"Geist Mono",ui-monospace,monospace;--font-editorial:"Instrument Serif",Georgia,serif;--bg:var(--ink-950);--bg-2:var(--ink-900);--on-bg:#eef2ec;--on-bg-dim:#aab5af;--on-bg-mute:#6e7c75;--ease:cubic-bezier(.2,.7,.2,1);--radius:10px;--radius-lg:18px}
+*,*::before,*::after{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--bg);color:var(--on-bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:var(--ink-950)}
+.display{font-family:var(--font-display);font-weight:500;letter-spacing:-.035em;line-height:.95}
+.editorial{font-family:var(--font-editorial);font-style:italic}
+.mono{font-family:var(--font-mono);font-size:.78em;letter-spacing:.04em;text-transform:uppercase}
+.kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-400)}
+.muted{color:var(--on-bg-dim)}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 32px}
+.article-wrap{max-width:780px;margin:0 auto;padding:0 32px}
+@media(max-width:720px){.wrap,.article-wrap{padding:0 20px}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:999px;font-weight:500;font-size:14px;cursor:pointer;transition:transform .25s;white-space:nowrap;border:1px solid transparent;text-decoration:none;font-family:inherit}
+.btn:hover{transform:translateY(-1px)}
+.btn-accent{background:var(--accent);color:var(--ink-950)}.btn-accent:hover{background:var(--accent-hot)}
+.btn-ghost{background:transparent;color:var(--on-bg);border-color:var(--line-strong)}.btn-ghost:hover{background:color-mix(in oklab,var(--on-bg) 8%,transparent)}
+.btn-sm{padding:8px 14px;font-size:13px}
+.topstrip{background:var(--ink-950);color:var(--on-bg-dim);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line);max-height:38px;overflow:hidden;transition:max-height .3s,opacity .3s}
+.topstrip.tight{max-height:0;opacity:0}
+.topstrip-inner{display:flex;gap:28px;padding:11px 32px;overflow-x:auto}
+.ts-item{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.site-header{position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg) 80%,transparent);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.site-header.scrolled{border-bottom-color:var(--line)}
+.header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding-block:18px;gap:36px}
+.logo{display:inline-flex;align-items:center;gap:10px;color:var(--on-bg);text-decoration:none}
+.logo-text{font-family:var(--font-display);font-weight:600;font-size:16px;letter-spacing:-.025em}
+.logo-tld{color:var(--brand-400)}
+.nav-main{display:flex;align-items:center;gap:6px;justify-content:center}
+.nav-link{color:var(--on-bg-dim);font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;transition:color .2s,background .2s;text-decoration:none;display:inline-flex;align-items:center}
+.nav-link:hover{color:var(--on-bg)}.nav-link.active{color:var(--on-bg);background:color-mix(in oklab,var(--on-bg) 8%,transparent)}
+.header-cta{display:flex;align-items:center;gap:10px}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--on-bg);width:42px;height:42px;border-radius:12px;cursor:pointer;align-items:center;justify-content:center}
+@media(max-width:1020px){.nav-main,.header-cta{display:none}.menu-toggle{display:inline-flex}.header-inner{grid-template-columns:auto 1fr}.menu-toggle{justify-self:end}}
+.mobile-menu{position:fixed;inset:0;background:var(--bg);z-index:100;padding:24px;display:flex;flex-direction:column;transform:translateY(-100%);transition:transform .4s}
+.mobile-menu.open{transform:none}
+.mobile-menu-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.mobile-nav{display:flex;flex-direction:column;gap:4px;flex:1}
+.mobile-nav-link{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);color:var(--on-bg);font-family:var(--font-display);font-size:28px;font-weight:500;text-decoration:none}
+.mobile-foot{padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.mobile-foot-row{display:flex;align-items:center;gap:10px;color:var(--on-bg-dim);font-size:14px}
+.article-hero{padding:56px 0 64px;border-bottom:1px solid var(--line);background:radial-gradient(700px 400px at 80% 0%,color-mix(in oklab,var(--brand-500) 10%,transparent),transparent 60%),var(--bg)}
+.crumbs{display:flex;align-items:center;gap:12px;margin-bottom:32px;font-size:13px;color:var(--on-bg-dim)}
+.crumbs a{color:inherit}.crumbs a:hover{color:var(--on-bg)}
+.article-tags{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.article-tag{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:color-mix(in oklab,var(--brand-500) 14%,transparent);color:var(--brand-300);font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid color-mix(in oklab,var(--brand-500) 28%,transparent)}
+.article-title{font-size:clamp(40px,6vw,80px);margin:0 0 24px;letter-spacing:-.04em;line-height:.94;max-width:18ch}
+.article-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.article-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--on-bg-dim)}
+.article-content{padding:64px 0}
+.article-content h2{font-family:var(--font-display);font-size:clamp(24px,3vw,36px);letter-spacing:-.025em;margin:56px 0 20px;font-weight:500}
+.article-content h3{font-family:var(--font-display);font-size:22px;letter-spacing:-.02em;margin:36px 0 16px;font-weight:500;color:var(--brand-300)}
+.article-content p{margin:0 0 20px;color:var(--on-bg-dim)}
+.article-content p strong{color:var(--on-bg);font-weight:500}
+.article-content ul,.article-content ol{margin:0 0 20px;padding-left:24px;color:var(--on-bg-dim)}
+.article-content li{margin-bottom:8px;line-height:1.6}
+.article-content li strong{color:var(--on-bg);font-weight:500}
+.article-content a{color:var(--accent);text-decoration:underline}
+.article-content table{width:100%;border-collapse:separate;border-spacing:0;margin:32px 0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.article-content th{background:var(--bg-2);padding:14px 18px;text-align:left;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-bg-dim);border-bottom:1px solid var(--line-strong);font-weight:400}
+.article-content td{padding:14px 18px;font-size:14px;border-bottom:1px solid var(--line);color:var(--on-bg-dim);vertical-align:top}
+.article-content tr:last-child td{border-bottom:0}
+.article-content td strong{color:var(--on-bg);font-weight:500}
+.highlight-box{background:color-mix(in oklab,var(--brand-500) 8%,transparent);border:1px solid color-mix(in oklab,var(--brand-500) 25%,transparent);border-radius:var(--radius);padding:24px 28px;margin:32px 0}
+.highlight-box .kicker{margin-bottom:10px;display:block}
+.highlight-box p{margin:0;color:var(--on-bg-dim)}.highlight-box p strong{color:var(--on-bg)}
+.accent-box{background:color-mix(in oklab,var(--accent) 8%,transparent);border:1px solid color-mix(in oklab,var(--accent) 25%,transparent);border-radius:var(--radius);padding:24px 28px;margin:32px 0}
+.accent-box p{margin:0;color:var(--on-bg-dim)}.accent-box p strong{color:var(--accent)}
+.code-block{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:20px 24px;margin:24px 0;font-family:var(--font-mono);font-size:13px;color:var(--brand-300);overflow-x:auto}
+.faq-section{margin:48px 0}
+.faq-item{border-top:1px solid var(--line)}.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-weight:500;font-size:16px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item[open] summary svg{transform:rotate(45deg)}
+.faq-item summary svg{transition:transform .25s;color:var(--brand-400);flex-shrink:0}
+.faq-answer{padding:0 0 20px;color:var(--on-bg-dim);line-height:1.7}
+.article-cta{margin:64px 0 0;padding:48px;background:radial-gradient(80% 100% at 100% 0%,color-mix(in oklab,var(--accent) 18%,transparent),transparent 60%),linear-gradient(170deg,var(--ink-800),var(--ink-950));border:1px solid var(--line);border-radius:var(--radius-lg);display:grid;grid-template-columns:1.5fr 1fr;gap:32px;align-items:end}
+@media(max-width:700px){.article-cta{grid-template-columns:1fr;padding:32px 24px}}
+.article-cta-actions{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+@media(max-width:700px){.article-cta-actions{align-items:stretch}}
+.site-footer{background:var(--ink-950);padding-top:80px;margin-top:80px;border-top:1px solid var(--line);overflow:hidden}
+.footer-top{display:grid;grid-template-columns:1.2fr 2fr;gap:64px;padding-bottom:64px}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.foot-link{display:block;padding:8px 0;color:var(--on-bg-dim);font-size:14px;transition:color .2s;text-decoration:none}.foot-link:hover{color:var(--on-bg)}
+.footer-bottom{padding:28px 0 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;border-top:1px solid var(--line)}
+.legal{display:flex;gap:22px;font-size:13px}.legal a{color:var(--on-bg-dim)}
+.footer-mega{font-family:var(--font-display);font-weight:600;font-size:clamp(60px,14vw,220px);line-height:.9;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px color-mix(in oklab,var(--brand-500) 28%,transparent);text-align:center;margin-top:24px;padding-bottom:24px;user-select:none;white-space:nowrap}
+@media(max-width:920px){.footer-top{grid-template-columns:1fr;gap:48px}}
+@media(max-width:640px){.footer-cols{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="topstrip" id="topstrip"><div class="wrap topstrip-inner"><span class="ts-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 11h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg> Stock France · Expédition 48h</span><span class="ts-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/></svg> Distributeur officiel Nord de la France Renon Power</span><span class="ts-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A18 18 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> SAV France · 03 27 37 36 57</span></div></div>
+<header class="site-header" id="header"><div class="wrap header-inner"><a href="../index.html" class="logo"><svg viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="20" height="16" rx="2"/><path d="M25 11v8h3v-8zM10 11v8M14 11v8M18 11v8"/><path d="M9 5h6M17 5h6" stroke-width="2"/></svg><span class="logo-text">Batterie-Stockage<span class="logo-tld">.fr</span></span></a><nav class="nav-main"><a class="nav-link" href="../index.html">Accueil</a><a class="nav-link" href="../index.html#range">Gamme</a><a class="nav-link" href="../index.html#about">Renon Power</a><a class="nav-link" href="../solutions-pro-industrie.html">Pro &amp; Industrie</a><a class="nav-link active" href="index.html">Blog</a><a class="nav-link" href="../index.html#support">Support</a><a class="nav-link" href="../index.html#contact">Devis</a></nav><div class="header-cta"><a class="btn btn-ghost btn-sm" href="../index.html#contact">Devis</a><a class="btn btn-accent btn-sm" href="../index.html#range">Configurer →</a></div><button class="menu-toggle" onclick="document.getElementById('mobile-menu').classList.add('open')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div></header>
+<div class="mobile-menu" id="mobile-menu"><div class="mobile-menu-head"><span class="mono muted">MENU</span><button style="background:none;border:1px solid var(--line);border-radius:999px;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--on-bg);" onclick="document.getElementById('mobile-menu').classList.remove('open')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><nav class="mobile-nav"><a class="mobile-nav-link" href="../index.html"><span class="mono muted">01</span><span>Accueil</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="mobile-nav-link" href="index.html"><span class="mono muted">02</span><span>Blog</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="mobile-nav-link" href="../index.html#contact"><span class="mono muted">03</span><span>Devis</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></nav><div class="mobile-foot"><div class="mobile-foot-row">03 27 37 36 57</div><a class="btn btn-accent" href="../index.html#contact" style="justify-content:center">Demander un devis</a></div></div>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Batterie de Stockage Solaire LiFePO₄ : Guide Complet 2024">
-  <meta property="og:description" content="Guide expert sur les batteries LiFePO₄ pour installation solaire : technologie, comparatif, économies et conseils d'installation.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.batterie-stockage.fr/blog/batterie-stockage-solaire-lifepo4-guide-complet.html">
-  <meta property="og:site_name" content="batterie-stockage.fr">
+<main>
+<section class="article-hero"><div class="article-wrap">
+  <div class="crumbs"><a href="../index.html">Accueil</a><span class="mono" style="color:var(--on-bg-mute)">/</span><a href="index.html">Blog</a><span class="mono" style="color:var(--on-bg-mute)">/</span><span style="color:var(--on-bg)">Batterie compatible Deye</span></div>
+  <div class="article-tags"><span class="article-tag">Compatibilité</span><span class="article-tag">Technique</span></div>
+  <h1 class="display article-title">Onduleur <span class="editorial" style="color:var(--brand-300)">Deye</span> :<br>quelle batterie<br>compatible ?</h1>
+  <div class="article-meta"><div class="article-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Juin 2026</div><div class="article-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 8 min de lecture</div><div class="article-meta-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/></svg> Testé sur notre installation</div></div>
+</div></section>
 
-  <!-- JSON-LD Article -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Batterie de Stockage Solaire LiFePO₄ : Guide Complet 2024",
-    "description": "Guide complet et expert sur les batteries de stockage solaire LiFePO₄ : technologie, avantages, comparatif de modèles, installation et économies réalisables.",
-    "author": {
-      "@type": "Organization",
-      "name": "batterie-stockage.fr",
-      "url": "https://www.batterie-stockage.fr"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "batterie-stockage.fr",
-      "url": "https://www.batterie-stockage.fr"
-    },
-    "datePublished": "2024-11-01",
-    "dateModified": "2024-11-01",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.batterie-stockage.fr/blog/batterie-stockage-solaire-lifepo4-guide-complet.html"
-    },
-    "keywords": "batterie stockage solaire, LiFePO4, batterie lithium fer phosphate, autoconsommation, stockage énergie solaire, Renon Power"
-  }
-  </script>
+<article class="article-content"><div class="article-wrap">
 
-  <!-- JSON-LD FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Quelle est la durée de vie d'une batterie LiFePO₄ pour le stockage solaire ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Une batterie LiFePO₄ de qualité offre entre 3 000 et 6 000 cycles de charge/décharge à 80 % de profondeur de décharge (DoD), soit une durée de vie réelle de 10 à 15 ans dans un usage résidentiel courant. Certains modèles premium comme la gamme Renon Power garantissent plus de 4 000 cycles."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quelle capacité de batterie choisir pour une maison avec panneaux solaires ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Pour une maison de 4 personnes consommant environ 10 à 12 kWh par jour, une batterie de 10 à 16 kWh est généralement recommandée. Des modèles comme la Renon Power Xcellent Plus 16 kWh ou la gamme Xtreme LV (10 à 30 kWh) couvrent ce besoin avec de la marge."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "La technologie LiFePO₄ est-elle vraiment plus sûre que le lithium NMC ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, la chimie lithium fer phosphate (LiFePO₄) est intrinsèquement plus stable thermiquement que le NMC (Nickel Manganèse Cobalt). Elle ne présente pas de risque d'emballement thermique (thermal runaway) dans des conditions normales d'utilisation, ce qui en fait la technologie de référence pour les applications résidentielles et semi-industrielles."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Peut-on connecter plusieurs batteries en parallèle pour augmenter la capacité ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Oui, la plupart des batteries de stockage résidentielles modernes sont conçues pour être connectées en parallèle ou en série. La gamme Renon Power Xtreme LV, par exemple, permet de moduler la capacité de 10 à 30 kWh via une architecture évolutive, idéale pour adapter le système à des besoins croissants."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Faut-il un onduleur hybride pour stocker l'énergie solaire ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Dans la plupart des configurations résidentielles, oui. Un onduleur hybride (ou onduleur avec entrée de charge batterie) est nécessaire pour gérer les flux entre les panneaux solaires, la batterie et le réseau. Certaines batteries tout-en-un intègrent déjà leur propre BMS et onduleur, simplifiant l'installation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quel retour sur investissement attendre d'une batterie de stockage solaire ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le retour sur investissement d'une batterie solaire LiFePO₄ est typiquement de 8 à 12 ans selon votre consommation, le tarif de l'électricité et le taux d'autoconsommation atteint. Avec la hausse continue des tarifs EDF, de nombreux foyers atteignent le ROI en moins de 10 ans, notamment en combinant stockage et effacement de pointe tarifaire."
-        }
-      }
-    ]
-  }
-  </script>
+<p>Deye est devenu l'un des onduleurs hybrides les plus installés en France entre 2022 et 2026, grâce à son excellent rapport qualité/prix et sa compatibilité étendue. Si vous avez un Deye et souhaitez ajouter une batterie, ce guide vous donne toutes les informations nécessaires — y compris les paramètres de configuration que les installateurs ne donnent pas toujours.</p>
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<div class="highlight-box"><span class="kicker">Compatible confirmé</span><p>Les batteries <strong>Renon Power (EBrick, Xcellent, Xcellent Plus, Xtreme LV)</strong> sont compatibles avec tous les onduleurs hybrides Deye via protocole CAN Pylontech. Compatibilité testée et confirmée par notre équipe technique.</p></div>
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f7f9fc;
-      color: #1a2333;
-      line-height: 1.75;
-      font-size: 17px;
-    }
+<h2>1. Les modèles Deye compatibles batteries LiFePO₄</h2>
+<p>Tous les onduleurs hybrides Deye de la gamme SUN-xK-SG sont compatibles batterie LiFePO₄ :</p>
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #0a3d62 0%, #1e6fa5 100%);
-      color: #fff;
-      padding: 18px 0;
-      box-shadow: 0 2px 12px rgba(10,61,98,0.18);
-    }
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .logo {
-      font-size: 1.45rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: #fff;
-      text-decoration: none;
-    }
-    .logo span { color: #f9d423; }
-    nav a {
-      color: rgba(255,255,255,0.88);
-      text-decoration: none;
-      margin-left: 22px;
-      font-size: 0.97rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: #f9d423; }
+<table>
+<thead><tr><th>Modèle Deye</th><th>Puissance</th><th>Phases</th><th>Protocole batterie</th></tr></thead>
+<tbody>
+<tr><td><strong>SUN-5K-SG03LP1-EU</strong></td><td>5 kW</td><td>Mono</td><td>CAN · Pylontech</td></tr>
+<tr><td><strong>SUN-6K-SG03LP1-EU</strong></td><td>6 kW</td><td>Mono</td><td>CAN · Pylontech</td></tr>
+<tr><td><strong>SUN-8K-SG03LP1-EU</strong></td><td>8 kW</td><td>Mono</td><td>CAN · Pylontech</td></tr>
+<tr><td><strong>SUN-10K-SG01LP3-EU</strong></td><td>10 kW</td><td>Tri</td><td>CAN · Pylontech</td></tr>
+<tr><td><strong>SUN-12K-SG04LP3-EU</strong></td><td>12 kW</td><td>Tri</td><td>CAN · Pylontech</td></tr>
+<tr><td><strong>SUN-5K-SG04LP1-EU</strong></td><td>5 kW</td><td>Mono</td><td>CAN · Pylontech</td></tr>
+<tr><td><strong>SUN-8K-SG04LP1-EU</strong></td><td>8 kW</td><td>Mono</td><td>CAN · Pylontech</td></tr>
+</tbody>
+</table>
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(120deg, #0a3d62 0%, #1e6fa5 60%, #28a0c8 100%);
-      color: #fff;
-      padding: 64px 24px 56px;
-      text-align: center;
-    }
-    .hero .breadcrumb {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 18px;
-    }
-    .hero .breadcrumb a { color: #f9d423; text-decoration: none; }
-    .hero h1 {
-      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
-      font-weight: 900;
-      line-height: 1.25;
-      max-width: 860px;
-      margin: 0 auto 18px;
-    }
-    .hero h1 span { color: #f9d423; }
-    .hero .hero-meta {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 28px;
-    }
-    .hero .hero-intro {
-      font-size: 1.12rem;
-      max-width: 720px;
-      margin: 0 auto;
-      color: rgba(255,255,255,0.92);
-    }
+<h2>2. Pourquoi le protocole Pylontech ?</h2>
+<p>Deye utilise le protocole CAN <strong>"Pylontech compatible"</strong> pour communiquer avec les batteries. Ce protocole est devenu un standard de facto du marché LiFePO₄ résidentiel. Toutes les batteries Renon Power l'implémentent nativement, ce qui garantit :</p>
+<ul>
+<li>Communication BMS complète (état de charge, température, courant, tension par cellule)</li>
+<li>Gestion automatique de la charge et décharge par l'onduleur</li>
+<li>Alertes et protections (surtension, sous-tension, surchauffe) remontées à l'onduleur</li>
+<li>Pas de configuration manuelle des paramètres de charge</li>
+</ul>
 
-    /* Main layout */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+<h2>3. Paramétrage Deye + Renon Power : étape par étape</h2>
+<p>Une fois la batterie connectée via câble CAN (RJ45), voici le paramétrage dans l'interface Deye :</p>
 
-    article {
-      background: #fff;
-      margin: 40px auto;
-      max-width: 900px;
-      border-radius: 14px;
-      box-shadow: 0 4px 32px rgba(10,61,98,0.10);
-      padding: 48px 56px;
-    }
+<h3>Via l'application SolarmanPV ou l'écran local</h3>
+<div class="code-block">
+Paramètre : Battery Type → Lithium<br>
+Sous-paramètre : Lithium Brand → Pylontech<br>
+Battery Capacity → selon votre modèle (ex: 160 Ah pour Xcellent Plus)<br>
+Max Charge Current → 100A<br>
+Max Discharge Current → 100A<br>
+Low Battery Voltage → 46V<br>
+High Battery Voltage → 58V
+</div>
 
-    @media (max-width: 680px) {
-      article { padding: 28px 18px; }
-    }
+<p>Une fois ces paramètres saisis, l'onduleur détecte automatiquement la batterie via CAN et affiche le SOC (état de charge) en temps réel.</p>
 
-    /* Typography */
-    h2 {
-      font-size: 1.55rem;
-      font-weight: 800;
-      color: #0a3d62;
-      margin: 48px 0 16px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #f9d423;
-      display: inline-block;
-    }
-    h3 {
-      font-size: 1.18rem;
-      font-weight: 700;
-      color: #1e6fa5;
-      margin: 32px 0 12px;
-    }
-    p { margin-bottom: 18px; }
-    ul, ol { margin: 0 0 20px 24px; }
-    li { margin-bottom: 8px; }
-    strong { color: #0a3d62; }
+<h2>4. Quelle batterie Renon Power avec quel Deye ?</h2>
 
-    /* Highlight box */
-    .highlight-box {
-      background: linear-gradient(135deg, #e8f4fd, #f0faff);
-      border-left: 5px solid #1e6fa5;
-      border-radius: 0 10px 10px 0;
-      padding: 20px 24px;
-      margin: 28px 0;
-    }
-    .highlight-box p { margin: 0; font-size: 1.05rem; }
+<table>
+<thead><tr><th>Onduleur Deye</th><th>Batterie recommandée</th><th>Capacité</th><th>Prix TTC</th></tr></thead>
+<tbody>
+<tr><td><strong>SUN-5K mono</strong></td><td>EBrick ou Xcellent</td><td>5,12 kWh</td><td>1 090 - 1 590 €</td></tr>
+<tr><td><strong>SUN-6K/8K mono</strong></td><td>Xcellent ×2 ou Xcellent Plus</td><td>10-16 kWh</td><td>3 180 - 3 588 €</td></tr>
+<tr><td><strong>SUN-10K/12K tri</strong></td><td>Xcellent Plus ou Xtreme LV</td><td>16-20 kWh</td><td>3 588 - 7 220 €</td></tr>
+</tbody>
+</table>
 
-    /* Warning box */
-    .warning-box {
-      background: #fffbea;
-      border-left: 5px solid #f9d423;
-      border-radius: 0 10px 10px 0;
-      padding: 20px 24px;
-      margin: 28px 0;
-    }
-    .warning-box p { margin: 0; }
+<h2>5. Câblage CAN : attention à la polarité</h2>
+<p>Le câble CAN RJ45 entre Deye et la batterie Renon Power utilise un câble <strong>droit (non croisé)</strong>. La plupart des batteries Renon Power sont livrées avec le câble CAN. Points de vigilance :</p>
+<ul>
+<li>Utiliser impérativement le câble fourni ou un câble CAN certifié</li>
+<li>Ne pas utiliser un câble Ethernet standard (pas le même pinout)</li>
+<li>Si plusieurs batteries en parallèle : daisy-chain (chaîne), le dernier module avec résistance de terminaison 120Ω</li>
+<li>Longueur maximum recommandée : 5 mètres</li>
+</ul>
 
-    /* Success box */
-    .success-box {
-      background: #eafaf1;
-      border-left: 5px solid #27ae60;
-      border-radius: 0 10px 10px 0;
-      padding: 20px 24px;
-      margin: 28px 0;
-    }
-    .success-box p { margin: 0; }
+<div class="accent-box"><p><strong>Problème fréquent :</strong> Si l'onduleur affiche "Battery Fault" ou ne détecte pas la batterie, vérifiez d'abord le câble CAN (polarité, connecteurs). Dans 80% des cas, c'est un problème de câblage, pas de compatibilité.</p></div>
 
-    /* Table */
-    .table-wrapper {
-      overflow-x: auto;
-      margin: 32px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 16px rgba(10,61,98,0.10);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.96rem;
-      min-width: 600px;
-    }
-    thead tr {
-      background: linear-gradient(135deg, #0a3d62, #1e6fa5);
-      color: #fff;
-    }
-    thead th {
-      padding: 14px 16px;
-      text-align: left;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-    tbody tr:nth-child(even) { background: #f0f8ff; }
-    tbody tr:nth-child(odd) { background: #fff; }
-    tbody td { padding: 13px 16px; border-bottom: 1px solid #dce8f5; vertical-align: middle; }
-    tbody tr:hover { background: #e3f2fd; }
-    .badge {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 700;
-    }
-    .badge-green { background: #d4efdf; color: #1a7a4a; }
-    .badge-blue { background: #d6eaf8; color: #1a5276; }
-    .badge-orange { background: #fdebd0; color: #a04000; }
+<h2>6. Mode backup : configuration pour coupure réseau</h2>
+<p>Pour que votre batterie Renon Power alimente votre maison en cas de coupure réseau avec un Deye :</p>
+<ol>
+<li>Activer le mode <strong>"Energy Storage"</strong> dans les paramètres avancés</li>
+<li>Configurer <strong>Time of Use</strong> selon votre tarif (heures pleines/creuses si applicable)</li>
+<li>Définir le <strong>SOC minimum backup</strong> : 20% recommandé (réserve pour coupure)</li>
+<li>Tester le backup en débranchant temporairement le réseau</li>
+</ol>
 
-    /* CTA Section */
-    .cta-section {
-      background: linear-gradient(135deg, #0a3d62 0%, #1e6fa5 100%);
-      border-radius: 14px;
-      padding: 44px 40px;
-      text-align: center;
-      color: #fff;
-      margin: 48px 0;
-    }
-    .cta-section h2 {
-      color: #f9d423;
-      border-bottom: none;
-      display: block;
-      font-size: 1.5rem;
-      margin-top: 0;
-    }
-    .cta-section p { color: rgba(255,255,255,0.9); max-width: 560px; margin: 12px auto 28px; }
-    .btn-cta {
-      display: inline-block;
-      background: #f9d423;
-      color: #0a3d62;
-      padding: 16px 36px;
-      border-radius: 50px;
+<h2>FAQ Batterie compatible Deye</h2>
+<div class="faq-section">
+<details class="faq-item"><summary>Les batteries Renon Power sont-elles compatibles avec tous les modèles Deye ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-answer">Oui, avec tous les onduleurs hybrides Deye de la gamme SUN-xK-SG (monophasé et triphasé). Compatibilité testée sur SUN-5K, 6K, 8K monophasé et SUN-10K, 12K triphasé.</div></details>
+<details class="faq-item"><summary>Faut-il un câble spécial pour connecter une batterie à un Deye ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-answer">Oui, un câble CAN RJ45 droit (pas croisé). Les batteries Renon Power sont livrées avec ce câble. Ne pas utiliser un câble Ethernet standard, le pinout est différent.</div></details>
+<details class="faq-item"><summary>Peut-on connecter plusieurs batteries Renon Power sur un seul Deye ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-answer">Oui. Les batteries se connectent en parallèle côté puissance (câbles DC) et en daisy-chain côté CAN. Jusqu'à 15 modules en parallèle selon le modèle. Chaque module supplémentaire est détecté automatiquement.</div></details>
+<details class="faq-item"><summary>Le Deye fonctionne-t-il en backup sans réseau avec une batterie Renon ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary><div class="faq-answer">Oui. Le Deye + batterie Renon Power bascule en mode backup en moins de 20 ms en cas de coupure réseau. Toutes les prises connectées sur la sortie backup sont alimentées par la batterie.</div></details>
+</div>
+
+<div class="article-cta"><div><span class="kicker">Vous avez un Deye ?</span><h3 class="display" style="font-size:32px;margin:12px 0 12px;letter-spacing:-.025em">On confirme la<br><span class="editorial" style="color:var(--accent)">compatibilité gratuitement.</span></h3><p class="muted" style="margin:0;font-size:14px;max-width:40ch">Donnez-nous votre référence Deye exacte — on vous confirme la batterie compatible et la configuration en moins de 4h.</p></div><div class="article-cta-actions"><a class="btn btn-accent" href="../index.html#contact">Vérifier la compatibilité →</a><a class="btn btn-ghost" href="index.html">← Retour au blog</a></div></div>
+
+</div></article>
+</main>
+
+<footer class="site-footer"><div class="wrap"><div class="footer-top"><div><a href="../index.html" class="logo" style="margin-bottom:18px;display:inline-flex"><svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="20" height="16" rx="2"/><path d="M25 11v8h3v-8zM10 11v8M14 11v8M18 11v8"/><path d="M9 5h6M17 5h6" stroke-width="2"/></svg><span class="logo-text" style="font-size:19px;margin-left:10px">Batterie-Stockage<span class="logo-tld">.fr</span></span></a><p class="muted" style="max-width:360px;line-height:1.6;font-size:14px">Distributeur officiel Nord de la France en France des batteries de stockage solaire Renon Power.</p></div><div class="footer-cols"><div><div class="kicker" style="margin-bottom:16px">Gamme</div><a class="foot-link" href="../index.html#range">EBrick 5 kWh</a><a class="foot-link" href="../index.html#range">Xcellent Plus 16 kWh</a><a class="foot-link" href="../index.html#range">Xtreme LV 10-30 kWh</a></div><div><div class="kicker" style="margin-bottom:16px">Blog</div><a class="foot-link" href="aides-subventions-energie-solaire-2026.html">Aides 2026</a><a class="foot-link" href="batterie-triphasee-maison-guide.html">Batterie triphasée</a><a class="foot-link" href="renon-power-vs-byd-comparatif-2026.html">Renon vs BYD</a></div><div><div class="kicker" style="margin-bottom:16px">Contact</div><a class="foot-link" href="../index.html#contact">Demander un devis</a><a class="foot-link" href="tel:0327373657">03 27 37 36 57</a></div></div></div><div class="footer-bottom"><div class="muted" style="font-size:12.5px">© 2026 Batterie-Stockage.fr</div><div class="legal"><a href="#">Mentions légales</a><a href="#">CGV</a></div></div></div><div class="footer-mega" aria-hidden>BATTERIE-STOCKAGE</div></footer>
+<script>window.addEventListener('scroll',function(){var s=window.scrollY>12;document.getElementById('header').classList.toggle('scrolled',s);document.getElementById('topstrip').classList.toggle('tight',s);},{passive:true});</script>
+</body>
+</html>
