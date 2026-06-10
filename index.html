@@ -1070,7 +1070,7 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; background: v
     </button>
     <nav class="nav-main">
       <button class="nav-link" data-nav="home" onclick="goTo('home')">Accueil</button>
-      <button class="nav-link" data-nav="range" onclick="goTo('range')">Gamme</button>
+      <button class="nav-link" data-nav="range" onclick="goTo('range')">Gamme</button> <a class="nav-link" href="calculateur-batterie-autoconsommation.html" style="background:none;border:none;cursor:pointer;font:inherit;color:inherit;padding:8px 14px;">Calculateur</a>
       <button class="nav-link" data-nav="about" onclick="goTo('about')">Renon Power</button>
       <a class="nav-link" href="solutions-pro-industrie.html" style="background:none;border:none;cursor:pointer;font:inherit;color:inherit;padding:8px 14px;">Pro &amp; Industrie</a>
       <a class="nav-link" href="blog/index.html" style="background:none;border:none;cursor:pointer;font:inherit;color:inherit;padding:8px 14px;">Blog</a>
@@ -1093,7 +1093,7 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; background: v
   </div>
   <nav class="mobile-nav">
     <button class="mobile-nav-link" onclick="goTo('home')"><span class="mono mute2">01</span><span>Accueil</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-    <button class="mobile-nav-link" onclick="goTo('range')"><span class="mono mute2">02</span><span>Gamme</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <button class="mobile-nav-link" onclick="goTo('range')"><span class="mono mute2">02</span><span>Gamme</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button> <a class="mobile-nav-link" href="calculateur-batterie-autoconsommation.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit"><span class="mono mute2">06</span><span>Calculateur</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <button class="mobile-nav-link" onclick="goTo('about')"><span class="mono mute2">03</span><span>Renon Power</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     <a class="mobile-nav-link" href="solutions-pro-industrie.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit"><span class="mono mute2">04</span><span>Pro &amp; Industrie</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <a class="mobile-nav-link" href="blog/index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit"><span class="mono mute2">05</span><span>Blog</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1316,24 +1316,24 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; background: v
         <div class="why-card why-card-loss">
           <div class="why-lbl mono">SANS BATTERIE</div>
           <div class="why-title">Surplus revendu au réseau</div>
-          <div class="why-num display">0,04<span class="why-unit">€/kWh</span></div>
-          <div class="why-desc muted">Tarif d'achat actuel du surplus photovoltaïque par EDF OA. Quasiment aucune valeur — l'énergie que vous produisez part presque gratuitement.</div>
-          <div class="why-bar"><div class="why-bar-fill why-bar-loss" style="width:16%"></div></div>
+          <div class="why-num display">0,011<span class="why-unit">€/kWh</span></div>
+          <div class="why-desc muted">Nouveau tarif de rachat du surplus depuis la réforme S21 (juin 2026). Quasiment aucune valeur — l'énergie que vous produisez et ne consommez pas part presque gratuitement.</div>
+          <div class="why-bar"><div class="why-bar-fill why-bar-loss" style="width:5%"></div></div>
         </div>
         <div class="why-eq mono"><span>vs</span></div>
         <div class="why-card why-card-gain">
           <div class="why-lbl mono">AVEC BATTERIE</div>
           <div class="why-title">Surplus consommé chez vous</div>
           <div class="why-num display">0,25<span class="why-unit">€/kWh</span></div>
-          <div class="why-desc muted">Prix moyen du kWh acheté au réseau aujourd'hui. Chaque kWh stocké puis réutilisé est <strong>6× plus rentable</strong> qu'un kWh revendu.</div>
+          <div class="why-desc muted">Prix moyen du kWh acheté au réseau aujourd'hui. Chaque kWh stocké puis réutilisé est <strong>22× plus rentable</strong> qu'un kWh revendu.</div>
           <div class="why-bar"><div class="why-bar-fill why-bar-gain" style="width:100%"></div></div>
         </div>
       </div>
       <div class="why-ratio">
         <div>
           <span class="kicker">Ratio de rentabilité</span>
-          <div class="display why-ratio-num">×6,25<span style="font-size:.4em;margin-left:10px;color:var(--on-bg-dim)">plus de valeur</span></div>
-          <p class="muted" style="max-width:44ch;margin:0">Sur une installation 6 kWc qui produit 6 900 kWh/an, c'est jusqu'à <strong>1 200 €/an</strong> de différence entre tout revendre et tout autoconsommer.</p>
+          <div class="display why-ratio-num">×22<span style="font-size:.4em;margin-left:10px;color:var(--on-bg-dim)">plus de valeur</span></div>
+          <p class="muted" style="max-width:44ch;margin:0">Sur une installation 6 kWc qui produit 6 900 kWh/an, c'est jusqu'à <strong>1 650 €/an</strong> de différence entre tout revendre et tout autoconsommer.</p> <p class="muted" style="max-width:44ch;margin:14px 0 0;padding-top:14px;border-top:1px dashed var(--line-strong)"><strong style="color:var(--accent)">Bonus heures creuses :</strong> même sans soleil, la batterie se recharge la nuit (~0,16 €/kWh) pour vous restituer en journée (~0,21 €/kWh). Une seconde source d'économies, été comme hiver.</p>
         </div>
         <button class="btn btn-accent btn-lg" onclick="scrollToSim()">Calculer mes économies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
@@ -3035,7 +3035,7 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; background: v
           <button class="foot-link" onclick="goToProduct('ebrick')">EBrick</button>
           <button class="foot-link" onclick="goToProduct('xcellent')">Xcellent</button>
           <button class="foot-link" onclick="goToProduct('xcellent-plus')">Xcellent Plus</button>
-          <button class="foot-link" onclick="goToProduct('xtreme-lv')">Xtreme LV</button>
+          <button class="foot-link" onclick="goToProduct('xtreme-lv')">Xtreme LV</button> <a class="foot-link" href="calculateur-batterie-autoconsommation.html">Calculateur de rentabilité</a>
         </div>
         <div>
           <div class="kicker" style="margin-bottom:16px">Société</div>
