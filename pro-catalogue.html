@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Catalogue Tarifs Pro — LIBRA | Batterie-Stockage.fr</title>
+<meta name="robots" content="noindex, nofollow"/>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap");
+:root{--ink-950:#07100b;--ink-900:#0b1610;--ink-850:#101b15;--ink-800:#15231c;--ink-700:#1d2e26;--ink-600:#2a3d33;--brand-500:#2e8b67;--brand-400:#5fb38e;--brand-300:#95cdb3;--accent:#c98b4d;--accent-hot:#e5a463;--line:color-mix(in oklab,#1a4d3a 18%,transparent);--line-strong:color-mix(in oklab,#1a4d3a 38%,transparent);--font-display:"Bricolage Grotesque",system-ui,sans-serif;--font-body:"Geist",system-ui,sans-serif;--font-mono:"Geist Mono",monospace;--font-editorial:"Instrument Serif",serif;--bg:#07100b;--bg-2:#0b1610;--bg-3:#101b15;--on-bg:#eef2ec;--on-bg-dim:#aab5af;--on-bg-mute:#6e7c75;--ease:cubic-bezier(.2,.7,.2,1);--radius:10px;--radius-lg:18px;--radius-xl:28px}
+*,*::before,*::after{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--bg);color:var(--on-bg);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.display{font-family:var(--font-display);font-weight:500;letter-spacing:-0.035em;line-height:0.95}
+.editorial{font-family:var(--font-editorial);font-style:italic;font-weight:400}
+.kicker{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--on-bg-dim)}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 32px}
+@media(max-width:720px){.wrap{padding:0 20px}}
+.section{padding-block:64px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:999px;border:1px solid transparent;font-weight:500;font-size:14px;cursor:pointer;transition:transform .25s var(--ease),background .25s var(--ease);white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-accent{background:var(--accent);color:var(--ink-950,#07100b)}.btn-accent:hover{background:var(--accent-hot)}
+.btn-ghost{background:transparent;color:var(--on-bg);border-color:var(--line-strong)}.btn-ghost:hover{background:color-mix(in oklab,var(--on-bg) 8%,transparent)}
+.btn-sm{padding:8px 14px;font-size:13px}
+/* GATE */
+#gate{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;align-items:center;justify-content:center}
+#gate-inner{max-width:440px;width:100%;padding:48px;background:var(--bg-2);border:1px solid var(--line-strong);border-radius:var(--radius-xl);text-align:center}
+.field{display:flex;flex-direction:column;gap:8px;text-align:left}
+.field label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--on-bg-dim)}
+.field input{padding:13px 16px;background:var(--bg-3);border:1px solid var(--line);border-radius:var(--radius);color:var(--on-bg);outline:none;transition:border-color .2s;font-size:14px;font-family:var(--font-body);width:100%}
+.field input:focus{border-color:var(--accent)}
+#gate-error{color:#f87171;font-size:13px;margin-top:8px;display:none}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding-block:16px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--on-bg)}
+.logo-text{font-family:var(--font-display);font-weight:600;font-size:17px;letter-spacing:-0.03em}
+.logo-tld{color:var(--brand-400)}
+.pro-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;background:color-mix(in oklab,var(--accent) 16%,transparent);color:var(--accent-hot);font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;border:1px solid color-mix(in oklab,var(--accent) 30%,transparent)}
+/* tab nav */
+.tab-nav{display:flex;gap:4px;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:4px;overflow-x:auto}
+.tab-btn{background:none;border:0;color:var(--on-bg-dim);font-size:13px;font-weight:500;padding:8px 18px;border-radius:999px;white-space:nowrap;transition:color .2s,background .2s;font-family:var(--font-body)}
+.tab-btn:hover{color:var(--on-bg)}
+.tab-btn.active{background:var(--bg-3);color:var(--on-bg);border:1px solid var(--line)}
+/* price table */
+.price-table{width:100%;border-collapse:collapse;font-size:13px}
+.price-table thead th{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-bg-mute);padding:12px 16px;text-align:left;border-bottom:2px solid var(--line-strong)}
+.price-table thead th.price-col{text-align:right}
+.price-table tbody td{padding:14px 16px;border-bottom:1px solid var(--line)}
+.price-table tbody tr:last-child td{border-bottom:0}
+.price-table tbody tr:hover td{background:color-mix(in oklab,var(--accent) 4%,transparent)}
+.price-table td.price-col{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.price-table td.price-base{color:var(--on-bg-dim)}
+.price-table td.price-gold{color:var(--accent)}
+.price-table td.price-diamond{color:var(--brand-300)}
+.price-table td.highlight{background:color-mix(in oklab,var(--accent) 6%,transparent)}
+.cat-header{display:flex;align-items:center;gap:12px;margin:40px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line-strong)}
+.cat-header svg{color:var(--accent)}
+.cat-title{font-family:var(--font-display);font-size:20px;font-weight:500}
+/* paliers legend */
+.palier{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase}
+.palier-base{background:color-mix(in oklab,var(--on-bg-dim) 12%,transparent);color:var(--on-bg-dim);border:1px solid var(--line)}
+.palier-gold{background:color-mix(in oklab,var(--accent) 14%,transparent);color:var(--accent-hot);border:1px solid color-mix(in oklab,var(--accent) 28%,transparent)}
+.palier-diamond{background:color-mix(in oklab,var(--brand-400) 14%,transparent);color:var(--brand-300);border:1px solid color-mix(in oklab,var(--brand-400) 28%,transparent)}
+/* notice */
+.notice{padding:16px 20px;background:color-mix(in oklab,var(--accent) 8%,transparent);border:1px solid color-mix(in oklab,var(--accent) 22%,transparent);border-radius:var(--radius);font-size:13px;color:var(--on-bg-dim);line-height:1.6}
+.notice strong{color:var(--on-bg)}
+/* tab content */
+.tab-content{display:none}.tab-content.active{display:block}
+</style>
+</head>
+<body class="palette-forest">
+
+<!-- GATE -->
+<div id="gate">
+  <div id="gate-inner">
+    <div style="font-size:36px;margin-bottom:16px">🔒</div>
+    <div class="display" style="font-size:28px;margin-bottom:8px">Accès installateurs</div>
+    <p class="muted" style="font-size:14px;margin:0 0 28px">Ce catalogue est réservé aux partenaires LIBRA. Entrez le code d'accès qui vous a été communiqué.</p>
+    <div class="field" style="margin-bottom:16px">
+      <label>Code d'accès</label>
+      <input type="password" id="gate-input" placeholder="••••••••" onkeydown="if(event.key==='Enter')checkGate()"/>
+    </div>
+    <div id="gate-error">Code incorrect. Contactez-nous au 03 27 37 36 57.</div>
+    <button class="btn btn-accent" style="width:100%;justify-content:center;margin-top:8px" onclick="checkGate()">Accéder au catalogue <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <p class="muted" style="font-size:12px;margin:16px 0 0">Pas encore partenaire ? <a href="pro.html" style="color:var(--accent)">Demander l'accès →</a></p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="20" height="16" rx="2"/><path d="M25 11v8h3v-8zM10 11v8M14 11v8M18 11v8"/><path d="M9 5h6M17 5h6" stroke-width="2"/></svg>
+      <span class="logo-text">Batterie-Stockage<span class="logo-tld">.fr</span></span>
+    </a>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="pro-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Catalogue Pro</span>
+      <a href="mailto:contact@batterie-stockage.fr" class="btn btn-ghost btn-sm">Commander</a>
+      <a href="tel:+33327373657" class="btn btn-accent btn-sm">03 27 37 36 57</a>
+    </div>
+  </div>
+</header>
+
+<main id="catalogue" style="display:none">
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- Titre + paliers -->
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px">
+      <div>
+        <div class="kicker" style="margin-bottom:12px">Catalogue tarifs — EXW Pologne</div>
+        <h1 class="display" style="font-size:clamp(36px,5vw,72px);margin:0">Prix installateurs<br><span class="editorial">LIBRA 2026.</span></h1>
+        <p class="muted" style="margin:12px 0 0;font-size:14px">Mise à jour : 30 mars 2026 · Valide 90 jours · Euro EXW Pologne</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;flex-shrink:0">
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--on-bg-mute);margin-bottom:4px">Paliers tarifaires</div>
+        <span class="palier palier-base">Base — prix min. client</span>
+        <span class="palier palier-gold">Gold — votre tarif standard</span>
+        <span class="palier palier-diamond">Diamond — commande &gt; 60 000 €</span>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-bottom:32px">
+      <strong>Base Price* = prix plancher de revente au client final.</strong> Ne pas communiquer ces tarifs en dehors de votre structure. Paiement : 100 % avant livraison (1ère commande), puis T/T 30/70 ou SINOSURE selon volume. Délai : 30–45 jours si hors stock.
+    </div>
+
+    <!-- TABS -->
+    <div class="tab-nav" style="margin-bottom:40px" id="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('onduleurs-lv',this)">Onduleurs LV mono</button>
+      <button class="tab-btn" onclick="switchTab('onduleurs-lv3',this)">Onduleurs LV tri</button>
+      <button class="tab-btn" onclick="switchTab('onduleurs-hv',this)">Onduleurs HV</button>
+      <button class="tab-btn" onclick="switchTab('micro',this)">Micro-onduleur</button>
+      <button class="tab-btn" onclick="switchTab('bat-lv',this)">Batteries LV</button>
+      <button class="tab-btn" onclick="switchTab('bat-hv',this)">Batteries HV</button>
+    </div>
+
+    <!-- TAB : Onduleurs LV mono -->
+    <div class="tab-content active" id="tab-onduleurs-lv">
+      <div class="cat-header"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 2v5M8 2v5M2 12h20"/></svg><span class="cat-title">Onduleurs hybrides basse tension — Monophasé</span></div>
+      <div style="overflow-x:auto">
+        <table class="price-table">
+          <thead><tr><th>#</th><th>Référence</th><th>Description</th><th class="price-col palier-base">Base*</th><th class="price-col palier-gold">Gold</th><th class="price-col palier-diamond">Diamond</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Ven-3G2-LE</td><td>3 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">640 €</td><td class="price-col price-gold">556 €</td><td class="price-col price-diamond">520 €</td></tr>
+            <tr><td>2</td><td>Ven-4G2-LE</td><td>4 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">652 €</td><td class="price-col price-gold">567 €</td><td class="price-col price-diamond">530 €</td></tr>
+            <tr><td>3</td><td>Ven-5G2-LE</td><td>5 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">665 €</td><td class="price-col price-gold">578 €</td><td class="price-col price-diamond">540 €</td></tr>
+            <tr><td>4</td><td>Ven-6G2-LE</td><td>6 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">676 €</td><td class="price-col price-gold">588 €</td><td class="price-col price-diamond">550 €</td></tr>
+            <tr><td>5</td><td>Ven-6.6G2-LE</td><td>6,6 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">681 €</td><td class="price-col price-gold">593 €</td><td class="price-col price-diamond">555 €</td></tr>
+            <tr><td>6</td><td>Jup-5G2-LE</td><td>5 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">676 €</td><td class="price-col price-gold">588 €</td><td class="price-col price-diamond">550 €</td></tr>
+            <tr><td>7</td><td>Jup-6G2-LE</td><td>6 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">689 €</td><td class="price-col price-gold">599 €</td><td class="price-col price-diamond">560 €</td></tr>
+            <tr><td>8</td><td>Jup-8G2-LE</td><td>8 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">915 €</td><td class="price-col price-gold">795 €</td><td class="price-col price-diamond">743 €</td></tr>
+            <tr><td>9</td><td>Jup-10G2-LE</td><td>10 kW mono on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">1 186 €</td><td class="price-col price-gold">1 032 €</td><td class="price-col price-diamond">964 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB : Onduleurs LV tri -->
+    <div class="tab-content" id="tab-onduleurs-lv3">
+      <div class="cat-header"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 2v5M8 2v5M2 12h20"/></svg><span class="cat-title">Onduleurs hybrides basse tension — Triphasé</span></div>
+      <div style="overflow-x:auto">
+        <table class="price-table">
+          <thead><tr><th>#</th><th>Référence</th><th>Description</th><th class="price-col">Base*</th><th class="price-col">Gold</th><th class="price-col">Diamond</th></tr></thead>
+          <tbody>
+            <tr><td>10</td><td>Mars-5G2-LE</td><td>5 kW tri on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">1 219 €</td><td class="price-col price-gold">1 060 €</td><td class="price-col price-diamond">990 €</td></tr>
+            <tr><td>11</td><td>Mars-6G2-LE</td><td>6 kW tri on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">1 243 €</td><td class="price-col price-gold">1 080 €</td><td class="price-col price-diamond">1 010 €</td></tr>
+            <tr><td>12</td><td>Mars-8G2-LE</td><td>8 kW tri on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">1 267 €</td><td class="price-col price-gold">1 102 €</td><td class="price-col price-diamond">1 030 €</td></tr>
+            <tr><td>13</td><td>Mars-10G2-LE</td><td>10 kW tri on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">1 291 €</td><td class="price-col price-gold">1 123 €</td><td class="price-col price-diamond">1 050 €</td></tr>
+            <tr><td>14</td><td>Mars-12G2-LE</td><td>12 kW tri on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">1 317 €</td><td class="price-col price-gold">1 145 €</td><td class="price-col price-diamond">1 070 €</td></tr>
+            <tr><td>15</td><td>Mars-14G2-LE</td><td>14 kW tri on/off-grid, 48 V, WiFi plug</td><td class="price-col price-base">1 341 €</td><td class="price-col price-gold">1 166 €</td><td class="price-col price-diamond">1 090 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB : Onduleurs HV -->
+    <div class="tab-content" id="tab-onduleurs-hv">
+      <div class="cat-header"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg><span class="cat-title">Onduleurs haute tension — Triphasé industriel</span></div>
+      <div style="overflow-x:auto">
+        <table class="price-table">
+          <thead><tr><th>#</th><th>Référence</th><th>Description</th><th class="price-col">Base*</th><th class="price-col">Gold</th><th class="price-col">Diamond</th></tr></thead>
+          <tbody>
+            <tr><td>16</td><td>Merc-30kW</td><td>30 kW HV tri on/off-grid</td><td class="price-col price-base">3 322 €</td><td class="price-col price-gold">2 889 €</td><td class="price-col price-diamond">2 700 €</td></tr>
+            <tr><td>17</td><td>Merc-40kW</td><td>40 kW HV tri on/off-grid</td><td class="price-col price-base">3 568 €</td><td class="price-col price-gold">3 103 €</td><td class="price-col price-diamond">2 900 €</td></tr>
+            <tr><td>18</td><td>Merc-50kW</td><td>50 kW HV tri on/off-grid</td><td class="price-col price-base">3 938 €</td><td class="price-col price-gold">3 424 €</td><td class="price-col price-diamond">3 200 €</td></tr>
+            <tr><td>19</td><td>Merc-60kW</td><td>60 kW HV tri on/off-grid</td><td class="price-col price-base">4 184 €</td><td class="price-col price-gold">3 638 €</td><td class="price-col price-diamond">3 400 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB : Micro-onduleur -->
+    <div class="tab-content" id="tab-micro">
+      <div class="cat-header"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg><span class="cat-title">Micro-onduleurs</span></div>
+      <div style="overflow-x:auto">
+        <table class="price-table">
+          <thead><tr><th>#</th><th>Référence</th><th>Description</th><th class="price-col">Base*</th><th class="price-col">Gold</th><th class="price-col">Diamond</th></tr></thead>
+          <tbody>
+            <tr><td>20</td><td>Ant-800G1-EU</td><td>800 W mono, WiFi intégré, EU</td><td class="price-col price-base">107 €</td><td class="price-col price-gold">93 €</td><td class="price-col price-diamond">87 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="notice" style="margin-top:20px">Idéal pour projets d'extension sans onduleur central. Garantie 10 ans. À coupler avec n'importe quel réseau existant.</div>
+    </div>
+
+    <!-- TAB : Batteries LV -->
+    <div class="tab-content" id="tab-bat-lv">
+      <div class="cat-header"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="11" rx="2"/><path d="M19 10h2v4h-2M3 10H1v4h2M9 5v2M15 5v2"/></svg><span class="cat-title">Batteries basse tension (LV) — 51,2 V</span></div>
+      <div style="overflow-x:auto">
+        <table class="price-table">
+          <thead><tr><th>#</th><th>Référence</th><th>Capacité</th><th>Format</th><th>IP</th><th class="price-col">Base*</th><th class="price-col">Gold</th><th class="price-col">Diamond</th></tr></thead>
+          <tbody>
+            <tr><td>21</td><td>MOON5-R Pro</td><td>5 kWh · 100 Ah</td><td>Rack, IP21</td><td>IP21</td><td class="price-col price-base">639 €</td><td class="price-col price-gold">556 €</td><td class="price-col price-diamond">519 €</td></tr>
+            <tr><td>22</td><td>MOON5-R Pro Rack</td><td>Support 4 batteries</td><td>Rack</td><td>—</td><td class="price-col price-base">90 €</td><td class="price-col price-gold">78 €</td><td class="price-col price-diamond">73 €</td></tr>
+            <tr><td>23</td><td>CE48100-W</td><td>5 kWh · 100 Ah</td><td>Murale</td><td>IP65</td><td class="price-col price-base">695 €</td><td class="price-col price-gold">604 €</td><td class="price-col price-diamond">564 €</td></tr>
+            <tr><td>24</td><td>CE48200-W</td><td>10 kWh · 200 Ah</td><td>Murale</td><td>IP65</td><td class="price-col price-base">1 176 €</td><td class="price-col price-gold">1 022 €</td><td class="price-col price-diamond">955 €</td></tr>
+            <tr><td>25</td><td>MOON5-W</td><td>5 kWh · 100 Ah</td><td>Murale</td><td>IP21</td><td class="price-col price-base">662 €</td><td class="price-col price-gold">576 €</td><td class="price-col price-diamond">537 €</td></tr>
+            <tr><td>26</td><td>MOON10-W</td><td>10 kWh · 200 Ah</td><td>Murale</td><td>IP21</td><td class="price-col price-base">1 142 €</td><td class="price-col price-gold">993 €</td><td class="price-col price-diamond">928 €</td></tr>
+            <tr><td>27</td><td>MOON15-G</td><td>15 kWh · 300 Ah</td><td>Sol + roulettes</td><td>IP21</td><td class="price-col price-base">1 230 €</td><td class="price-col price-gold">1 070 €</td><td class="price-col price-diamond">1 000 €</td></tr>
+            <tr><td>28</td><td>MOON16-G</td><td>16 kWh · 314 Ah</td><td>Sol</td><td>IP21</td><td class="price-col price-base">1 477 €</td><td class="price-col price-gold">1 284 €</td><td class="price-col price-diamond">1 200 €</td></tr>
+            <tr><td>29</td><td>MOON16-G Pro</td><td>16 kWh · 314 Ah</td><td>Sol Pro</td><td>IP21</td><td class="price-col price-base">1 538 €</td><td class="price-col price-gold">1 338 €</td><td class="price-col price-diamond">1 250 €</td></tr>
+            <tr><td>30</td><td>Link5-L</td><td>5 kWh · 100 Ah</td><td>Stackable P&amp;P</td><td>IP65</td><td class="price-col price-base">1 248 €</td><td class="price-col price-gold">1 084 €</td><td class="price-col price-diamond">1 014 €</td></tr>
+            <tr><td>31</td><td>Link10-L</td><td>10 kWh · 200 Ah</td><td>Stackable P&amp;P</td><td>IP65</td><td class="price-col price-base">2 177 €</td><td class="price-col price-gold">1 893 €</td><td class="price-col price-diamond">1 769 €</td></tr>
+            <tr><td>32</td><td>Link15-L</td><td>15 kWh · 300 Ah</td><td>Stackable P&amp;P</td><td>IP65</td><td class="price-col price-base">3 105 €</td><td class="price-col price-gold">2 699 €</td><td class="price-col price-diamond">2 523 €</td></tr>
+            <tr><td>33</td><td>Link20-L</td><td>20 kWh · 400 Ah</td><td>Stackable P&amp;P</td><td>IP65</td><td class="price-col price-base">4 032 €</td><td class="price-col price-gold">3 507 €</td><td class="price-col price-diamond">3 277 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB : Batteries HV -->
+    <div class="tab-content" id="tab-bat-hv">
+      <div class="cat-header"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg><span class="cat-title">Batteries haute tension (HV) &amp; industriel</span></div>
+      <div style="overflow-x:auto">
+        <table class="price-table">
+          <thead><tr><th>#</th><th>Référence</th><th>Capacité</th><th>Format</th><th>Options</th><th class="price-col">Base*</th><th class="price-col">Gold</th><th class="price-col">Diamond</th></tr></thead>
+          <tbody>
+            <tr><td>34</td><td>CE-P1000CS</td><td>1 kWh portable</td><td>Station portable</td><td>—</td><td class="price-col price-base">444 €</td><td class="price-col price-gold">387 €</td><td class="price-col price-diamond">361 €</td></tr>
+            <tr><td>35</td><td>CAL40-RH</td><td>40 kWh</td><td>Murale</td><td>IP65</td><td class="price-col price-base">6 286 €</td><td class="price-col price-gold">5 466 €</td><td class="price-col price-diamond">5 108 €</td></tr>
+            <tr><td>36</td><td>CAL60-RH</td><td>60 kWh</td><td>Murale</td><td>IP65</td><td class="price-col price-base">8 906 €</td><td class="price-col price-gold">7 744 €</td><td class="price-col price-diamond">7 237 €</td></tr>
+            <tr><td>37</td><td>GAN62</td><td>62 kWh</td><td>Stackable</td><td>IP65 · Chauffage · Anti-feu</td><td class="price-col price-base">10 787 €</td><td class="price-col price-gold">9 380 €</td><td class="price-col price-diamond">8 765 €</td></tr>
+            <tr><td>38</td><td>GAN69</td><td>69 kWh</td><td>Stackable</td><td>IP65 · Chauffage · Anti-feu</td><td class="price-col price-base">12 054 €</td><td class="price-col price-gold">10 482 €</td><td class="price-col price-diamond">9 796 €</td></tr>
+            <tr><td>39</td><td>OBE70</td><td>69 kWh</td><td>Armoire AC</td><td>IP54 · AC · Anti-feu</td><td class="price-col price-base">12 245 €</td><td class="price-col price-gold">10 648 €</td><td class="price-col price-diamond">9 951 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="notice" style="margin-top:20px">
+        <strong>Stack System GAN-SH</strong> : disponible en 30 / 38 / 46 / 53 / 61 / 69 kWh (4 à 9 modules). Prix sur demande selon configuration. Idéal tertiaire, industrie légère, HPA. Jusqu'à 4 systèmes en parallèle. Cycle life &gt; 8 000 cycles.
+      </div>
+    </div>
+
+    <!-- CTA commande -->
+    <div style="margin-top:64px;padding:40px;background:color-mix(in oklab,var(--accent) 8%,transparent);border:1px solid color-mix(in oklab,var(--accent) 22%,transparent);border-radius:var(--radius-xl);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;flex-wrap:wrap">
+      <div>
+        <div class="kicker" style="margin-bottom:8px">Prêt à commander ?</div>
+        <div class="display" style="font-size:28px;margin-bottom:8px">Contactez-nous pour un devis personnalisé.</div>
+        <p class="muted" style="font-size:14px;margin:0">Commandes &gt; 10 000 € : 100 % avant livraison (1ère). Commandes récurrentes : T/T 30/70 ou SINOSURE. Délai 30–45j si hors stock France.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;flex-shrink:0">
+        <a href="mailto:contact@batterie-stockage.fr?subject=Commande LIBRA Pro" class="btn btn-accent">Commander par email →</a>
+        <a href="tel:+33327373657" class="btn btn-ghost">Appeler · 03 27 37 36 57</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<script>
+// GATE
+const PRO_CODE = 'LIBRA2026'; // ← modifiez ce code à votre convenance
+function checkGate() {
+  const val = document.getElementById('gate-input').value.trim().toUpperCase();
+  if (val === PRO_CODE) {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('catalogue').style.display = 'block';
+    sessionStorage.setItem('libra_pro', '1');
+  } else {
+    document.getElementById('gate-error').style.display = 'block';
+    document.getElementById('gate-input').style.borderColor = '#f87171';
+  }
+}
+// Persistance session
+if (sessionStorage.getItem('libra_pro') === '1') {
+  document.getElementById('gate').style.display = 'none';
+  document.getElementById('catalogue').style.display = 'block';
+}
+// TABS
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
