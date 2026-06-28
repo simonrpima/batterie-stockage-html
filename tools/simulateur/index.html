@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Simulateur ROI Batterie de Stockage — Cliquide / Renon Power</title>
+<meta name="description" content="Simulateur de rentabilité d'une batterie de stockage pour professionnels et grandes surfaces. Calcul du coût installé, des pertes évitées par coupure et du retour sur investissement." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Rajdhani:wght@600;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1A2F; --navy-panel:#11263F; --navy-line:#1E3A5A;
+    --gold:#E8B04B; --gold-soft:#F0C97A;
+    --ink:#F2F4F8; --slate:#8FA3BC; --dead:#54657A;
+    --green:#3FB97F; --red:#E66A5A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--navy);color:var(--ink);
+    font-family:'Raleway',system-ui,sans-serif;line-height:1.55;
+    padding:0 0 60px;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--navy-line);padding:18px 0;margin-bottom:8px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:22px;letter-spacing:.02em}
+  .brand .b1{color:var(--gold)} .brand .b2{color:var(--ink)}
+  .badge{margin-left:auto;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);border:1px solid var(--navy-line);padding:4px 10px;border-radius:20px}
+
+  .alert-storm{background:linear-gradient(90deg,rgba(230,106,90,.14),transparent);border:1px solid rgba(230,106,90,.4);border-radius:12px;padding:14px 18px;margin:22px 0;font-size:14.5px}
+  .alert-storm b{color:var(--gold-soft)}
+
+  h1{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:clamp(28px,5vw,40px);line-height:1.05;margin:14px 0 6px}
+  .sub{color:var(--slate);font-size:15px;max-width:680px;margin-bottom:26px}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--navy-panel);border:1px solid var(--navy-line);border-radius:14px;padding:22px}
+
+  label{display:block;font-family:'Montserrat',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.03em;color:var(--ink);margin:16px 0 7px}
+  label .hint{display:block;font-weight:500;font-size:11px;color:var(--slate);letter-spacing:0;margin-top:2px}
+  label:first-of-type{margin-top:0}
+  select,input[type=number]{
+    width:100%;background:var(--navy);border:1px solid var(--navy-line);color:var(--ink);
+    font-family:'Rajdhani',sans-serif;font-weight:600;font-size:18px;padding:11px 13px;border-radius:9px;outline:none;
+  }
+  select:focus,input:focus{border-color:var(--gold)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .unit-wrap{position:relative}
+  .unit-wrap .u{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:var(--slate);font-family:'Montserrat';font-size:12px;pointer-events:none}
+
+  details.adv{margin-top:18px;border-top:1px dashed var(--navy-line);padding-top:14px}
+  details.adv summary{cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:600;font-size:12.5px;color:var(--gold-soft);letter-spacing:.04em}
+  details.adv[open] summary{margin-bottom:6px}
+  .vgroup{font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:18px 0 6px;border-bottom:1px solid var(--navy-line);padding-bottom:5px}
+  .vgroup .hint{display:inline;font-weight:500;font-size:10.5px;color:var(--slate);letter-spacing:0}
+
+  /* results */
+  .hero-res{text-align:center;border:1px solid var(--navy-line);border-radius:14px;padding:24px 18px;background:linear-gradient(180deg,rgba(232,176,75,.08),transparent);margin-bottom:16px}
+  .hero-res .k{font-family:'Montserrat',sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+  .hero-res .big{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:clamp(40px,8vw,58px);color:var(--gold);line-height:1;margin-top:6px}
+  .hero-res .big small{font-size:.42em;color:var(--gold-soft);font-weight:600}
+
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+  .stat{background:var(--navy);border:1px solid var(--navy-line);border-radius:11px;padding:13px 15px}
+  .stat .k{font-size:11px;color:var(--slate);font-family:'Montserrat',sans-serif;letter-spacing:.05em;text-transform:uppercase}
+  .stat .v{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:23px;color:var(--ink);margin-top:3px}
+  .stat .v.gold{color:var(--gold)}
+
+  .break{background:var(--navy);border:1px solid var(--navy-line);border-radius:11px;padding:6px 15px;margin-bottom:16px}
+  .break .li{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--navy-line);font-size:13.5px}
+  .break .li:last-child{border-bottom:none}
+  .break .li .lab{color:var(--slate)}
+  .break .li .val{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:16px}
+  .break .li.total .lab{color:var(--ink);font-family:'Montserrat';font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+  .break .li.total .val{color:var(--gold);font-size:20px}
+
+  .verdict{border-radius:12px;padding:16px 18px;font-size:14.5px;margin-bottom:14px;border:1px solid}
+  .verdict.good{background:rgba(63,185,127,.12);border-color:rgba(63,185,127,.45)}
+  .verdict.mid{background:rgba(232,176,75,.10);border-color:rgba(232,176,75,.4)}
+  .verdict.long{background:rgba(230,106,90,.10);border-color:rgba(230,106,90,.4)}
+  .verdict b{font-family:'Rajdhani',sans-serif;font-size:18px;display:block;margin-bottom:3px}
+  .verdict.good b{color:var(--green)} .verdict.mid b{color:var(--gold-soft)} .verdict.long b{color:var(--red)}
+
+  .enedis{display:none;background:rgba(230,106,90,.10);border:1px solid rgba(230,106,90,.4);border-radius:11px;padding:13px 16px;font-size:13px;margin-bottom:14px;color:var(--ink)}
+  .enedis.show{display:block}
+  .enedis b{color:var(--red)}
+
+  .resil{background:var(--navy);border:1px dashed var(--gold);border-radius:11px;padding:13px 16px;font-size:13.5px;color:var(--gold-soft);margin-bottom:16px}
+
+  .btns{display:flex;gap:10px;flex-wrap:wrap}
+  button{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.03em;border:none;border-radius:9px;padding:13px 18px;cursor:pointer}
+  .btn-print{background:var(--gold);color:var(--navy);flex:1}
+  .btn-reset{background:transparent;color:var(--slate);border:1px solid var(--navy-line)}
+
+  footer{color:var(--dead);font-size:11.5px;margin-top:30px;text-align:center;line-height:1.7}
+  footer a{color:var(--slate)}
+  .disc{color:var(--dead);font-size:11px;margin-top:10px}
+
+  @media print{
+    body{background:#fff;color:#111}
+    .panel,.hero-res,.stat,.break,.input-col{background:#fff !important;border-color:#ccc !important}
+    .no-print{display:none !important}
+    .brand .b2,h1,.stat .v,.break .li .val{color:#111 !important}
+  }
+</style>
+</head>
+<body>
+<header><div class="wrap brand">
+  <span><span class="b1">Cliquide</span> <span class="b2">France</span></span>
+  <span class="badge">Simulateur ROI · Renon Power</span>
+</div></header>
+
+<div class="wrap">
+
+  <div class="alert-storm no-print">
+    ⚡ <b>Il y a 2 jours : 70 000 foyers privés d'électricité pendant 48 h.</b> Tempête, grêle, tornade — et coupures à répétition. Une batterie de stockage, c'est <b>zéro interruption</b> pour votre activité… et un investissement qui se rembourse. Calculez-le ci-dessous.
+  </div>
+
+  <div class="eyebrow">Outil commercial terrain</div>
+  <h1>Quand votre batterie est-elle rentabilisée&nbsp;?</h1>
+  <p class="sub">Sélectionnez un produit Renon, renseignez ce qu'une coupure vous coûte réellement, et obtenez le coût installé, les pertes évitées et le retour sur investissement — en nombre de coupures et en années.</p>
+
+  <div class="grid">
+    <!-- INPUTS -->
+    <div class="panel input-col">
+      <label for="produit">Produit Renon Power
+        <span class="hint">La capacité se remplit automatiquement (modifiable).</span>
+      </label>
+      <select id="produit"></select>
+
+      <label for="capacite" style="margin-top:14px">Capacité du système
+        <span class="hint">Pré-remplie selon le produit (modifiable).</span>
+      </label>
+      <div class="unit-wrap"><input type="number" id="capacite" min="1" step="1"><span class="u">kWh</span></div>
+
+      <div class="eyebrow" style="margin-top:24px">Ce qu'une coupure vous coûte</div>
+      <label for="ca">Chiffre d'affaires par jour
+        <span class="hint">CA quotidien du site (perdu si fermé).</span>
+      </label>
+      <div class="unit-wrap"><input type="number" id="ca" value="12000" step="500"><span class="u">€/jour</span></div>
+
+      <div class="row" style="margin-top:14px">
+        <div>
+          <label for="duree">Durée moyenne d'une coupure</label>
+          <div class="unit-wrap"><input type="number" id="duree" value="1" step="0.5" min="0"><span class="u">jours</span></div>
+        </div>
+        <div>
+          <label for="freq">Coupures par an</label>
+          <div class="unit-wrap"><input type="number" id="freq" value="2" step="1" min="0"><span class="u">/an</span></div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:14px">
+        <div>
+          <label for="denrees">Denrées perdues / coupure
+            <span class="hint">Frais, surgelés…</span>
+          </label>
+          <div class="unit-wrap"><input type="number" id="denrees" value="4000" step="500"><span class="u">€</span></div>
+        </div>
+        <div>
+          <label for="remise">Remise en route / coupure
+            <span class="hint">Redémarrage, nettoyage, main d'œuvre.</span>
+          </label>
+          <div class="unit-wrap"><input type="number" id="remise" value="800" step="100"><span class="u">€</span></div>
+        </div>
+      </div>
+
+      <details class="adv no-print">
+        <summary>🔒 Mode vendeur — tous les paramètres de prix (non affichés au client)</summary>
+
+        <div class="vgroup">Matériel</div>
+        <div class="row">
+          <div>
+            <label for="prixkwh">Prix Renon <span class="hint">hors transport</span></label>
+            <div class="unit-wrap"><input type="number" id="prixkwh" value="140" step="1"><span class="u">€/kWh</span></div>
+          </div>
+          <div>
+            <label for="transport">Transport <span class="hint">% du coût batterie</span></label>
+            <div class="unit-wrap"><input type="number" id="transport" value="8" step="1"><span class="u">%</span></div>
+          </div>
+        </div>
+        <label for="marge" style="margin-top:12px">Marge commerciale <span class="hint">appliquée au coût livré (batterie + transport)</span></label>
+        <div class="unit-wrap" style="max-width:48%"><input type="number" id="marge" value="25" step="1"><span class="u">%</span></div>
+
+        <div class="vgroup">Installation &amp; génie civil <span class="hint">— auto-calculé selon capacité &amp; poids (modifiable)</span></div>
+        <div class="row">
+          <div><label for="grue">Grue / manutention</label><div class="unit-wrap"><input type="number" id="grue" value="850" step="50"><span class="u">€</span></div></div>
+          <div><label for="dalle">Dalle / génie civil</label><div class="unit-wrap"><input type="number" id="dalle" value="1800" step="100"><span class="u">€</span></div></div>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <div><label for="pose">Pose &amp; main d'œuvre</label><div class="unit-wrap"><input type="number" id="pose" value="2500" step="100"><span class="u">€</span></div></div>
+          <div><label for="raccord">Raccordement élec.</label><div class="unit-wrap"><input type="number" id="raccord" value="1500" step="100"><span class="u">€</span></div></div>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <div><label for="miseservice">Mise en service</label><div class="unit-wrap"><input type="number" id="miseservice" value="800" step="100"><span class="u">€</span></div></div>
+          <div><label for="etude">Étude / ingénierie</label><div class="unit-wrap"><input type="number" id="etude" value="0" step="100"><span class="u">€</span></div></div>
+        </div>
+
+        <div class="vgroup">Réseau</div>
+        <label for="enedisfrais">Frais de raccordement ENEDIS <span class="hint">souvent requis &gt; 500 kWh</span></label>
+        <div class="unit-wrap" style="max-width:48%"><input type="number" id="enedisfrais" value="0" step="500"><span class="u">€</span></div>
+
+        <p class="disc">Tous ces paramètres restent <b>internes</b> : le client ne voit que des lignes groupées et le total. Grue, dalle, étude &amp; ENEDIS se pré-remplissent selon le produit choisi.</p>
+      </details>
+    </div>
+
+    <!-- RESULTS -->
+    <div>
+      <div class="hero-res">
+        <div class="k">Rentabilisé après</div>
+        <div class="big" id="r-coupures">—<small> coupures</small></div>
+        <div class="k" style="margin-top:10px">soit environ <span id="r-annees" style="color:var(--gold-soft);font-family:'Rajdhani';font-weight:700">—</span> au rythme actuel</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="k">Investissement installé</div><div class="v gold" id="r-total">—</div></div>
+        <div class="stat"><div class="k">Perte évitée / coupure</div><div class="v" id="r-perte">—</div></div>
+      </div>
+
+      <div class="break" id="breakdown"></div>
+
+      <div class="enedis" id="enedis">⚠️ <b>Déclaration ENEDIS requise</b> — au-delà de 500 kWh / raccordement réseau, une convention de raccordement et une étude ENEDIS sont nécessaires. À intégrer au planning projet.</div>
+
+      <div class="verdict" id="verdict"><b>—</b><span id="verdict-txt"></span></div>
+
+      <div class="resil">🛡️ <b>Au-delà du ROI :</b> <span id="resil-txt">à chaque coupure, votre activité continue sans interruption — chiffre d'affaires sauvé, clients servis, image préservée.</span></div>
+
+      <div class="btns no-print">
+        <button class="btn-print" onclick="window.print()">📄 Générer le PDF / Imprimer</button>
+        <button class="btn-reset" onclick="location.reload()">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Cliquide France — Distributeur exclusif <b>Renon Power</b> France ·
+    <a href="https://www.batterie-stockage.fr">batterie-stockage.fr</a><br>
+    Estimation indicative à but commercial. Prix, frais d'installation et raccordement à confirmer par devis. Ne constitue pas un engagement contractuel.
+  </footer>
+</div>
+
+<script>
+// ---- Base produits Renon (specs réelles catalogue) ----
+// kg = poids réel catalogue Renon ; indoor = pose intérieure (pas de dalle) ; mobile = sur remorque (ni grue ni dalle)
+const PRODUITS = [
+  {id:"ebase60b",  nom:"EBase 60B — rack indoor 60 kWh",      kwh:61.44, kg:680,   indoor:true,  mobile:false, enedis:false},
+  {id:"ecube60ap", nom:"ECube 60AP — air-cooling 60 kWh",     kwh:61.44, kg:1050,  indoor:false, mobile:false, enedis:false},
+  {id:"mpack261a", nom:"MPack 261A — liquid-cooled 261 kWh",  kwh:261.2, kg:2900,  indoor:false, mobile:false, enedis:false},
+  {id:"mpack261as",nom:"MPack 261AS — liquid-cooled 261 kWh", kwh:261.2, kg:2800,  indoor:false, mobile:false, enedis:false},
+  {id:"estand",    nom:"EStand — DC Fast Charging 261 kWh",   kwh:261.2, kg:2834,  indoor:false, mobile:false, enedis:false},
+  {id:"xgen",      nom:"XGen — mobile 522 kWh",               kwh:522,   kg:8000,  indoor:false, mobile:true,  enedis:true},
+  {id:"smatrix",   nom:"Smart Matrix A — 10ft 1 672 kWh",     kwh:1672,  kg:15000, indoor:false, mobile:false, enedis:true},
+  {id:"bess500",   nom:"BESS — conteneur 500 kWh",            kwh:500,   kg:6000,  indoor:false, mobile:false, enedis:false},
+  {id:"bess2mwh",  nom:"BESS — conteneur 2 MWh",              kwh:2000,  kg:30000, indoor:false, mobile:false, enedis:true},
+];
+
+// ---- Barèmes d'installation (cohérents marché France : install+raccord 50-100 €/kWh dégressif, génie civil/grue selon poids) ----
+function coutGrue(kg, mobile){            // manutention / levage selon le poids
+  if(mobile) return 0;
+  if(kg < 1000)  return 500;              // transpalette / hayon
+  if(kg < 3500)  return 1200;             // camion-grue
+  if(kg < 10000) return 2500;             // grue mobile légère
+  if(kg < 20000) return 4500;             // grue mobile
+  return 7000;                            // grue + convoi exceptionnel
+}
+function coutDalle(kg, indoor, mobile){   // dalle béton / génie civil
+  if(mobile || indoor) return 0;          // remorque ou pose intérieure : pas de dalle
+  if(kg < 3500)  return 2500;             // dalle armée standard
+  if(kg < 20000) return 6000;             // fondation renforcée
+  return 10000;                           // génie civil conteneur lourd
+}
+function coutPose(kwh){                    // main d'œuvre pose (€/kWh dégressif)
+  const r = kwh<=100 ? 45 : kwh<=500 ? 30 : kwh<=1000 ? 22 : 15;
+  return Math.round(kwh*r/100)*100;
+}
+function coutRaccord(kwh){                 // raccordement élec. local (TGBT, protections, câblage)
+  if(kwh<=100)  return 1500;
+  if(kwh<=500)  return 3000;
+  if(kwh<=1000) return 6000;
+  return 10000;
+}
+function coutMiseService(kwh){             // mise en service / paramétrage EMS
+  if(kwh<=100)  return 800;
+  if(kwh<=500)  return 1500;
+  if(kwh<=1000) return 2500;
+  return 4000;
+}
+function coutEtude(kwh){                    // étude / ingénierie (15-40 €/kWh marché, plafonné)
+  if(kwh < 250)  return 0;
+  if(kwh < 1000) return 3000;
+  return 6000;
+}
+function coutEnedis(kwh, enedis){          // frais réseau ENEDIS (indicatif — devis ferme requis > 250 kVA)
+  return (kwh>500 || enedis) ? 5000 : 0;
+}
+
+const $ = id => document.getElementById(id);
+const eur = n => Math.round(n).toLocaleString('fr-FR') + ' €';
+
+// remplir le menu
+const sel = $("produit");
+PRODUITS.forEach(p => { const o=document.createElement('option'); o.value=p.id; o.textContent=p.nom; sel.appendChild(o); });
+
+function appliqueProduit(){
+  const p = PRODUITS.find(x=>x.id===sel.value);
+  $("capacite").value = p.kwh;
+  $("grue").value        = coutGrue(p.kg, p.mobile);
+  $("dalle").value       = coutDalle(p.kg, p.indoor, p.mobile);
+  $("pose").value        = coutPose(p.kwh);
+  $("raccord").value     = coutRaccord(p.kwh);
+  $("miseservice").value = coutMiseService(p.kwh);
+  $("etude").value       = coutEtude(p.kwh);
+  $("enedisfrais").value = coutEnedis(p.kwh, p.enedis);
+  calcule();
+}
+
+function anneesTxt(coupures, freq){
+  if(!freq || freq<=0) return "—";
+  const a = coupures / freq;
+  if(a < 1) return Math.round(a*12) + " mois";
+  return (a<10 ? a.toFixed(1) : Math.round(a)) + " ans";
+}
+
+function calcule(){
+  const kwh   = +$("capacite").value || 0;
+  const pkwh  = +$("prixkwh").value || 0;
+  const tr    = (+$("transport").value || 0)/100;
+  const marge = (+$("marge").value || 0)/100;
+  const grue  = +$("grue").value || 0;
+  const dalle = +$("dalle").value || 0;
+  const pose  = +$("pose").value || 0;
+  const raccord = +$("raccord").value || 0;
+  const miseservice = +$("miseservice").value || 0;
+  const etude = +$("etude").value || 0;
+  const enedisfrais = +$("enedisfrais").value || 0;
+
+  const p = PRODUITS.find(x=>x.id===sel.value);
+  const enedisActif = (kwh>500 || (p&&p.enedis));
+
+  const coutBatterie = kwh * pkwh;                          // achat Renon (hors transport)
+  const transp       = coutBatterie * tr;                  // transport en sus
+  const equipement   = (coutBatterie + transp) * (1 + marge); // prix de vente matériel livré
+  const installation = grue + dalle + pose + raccord + miseservice + etude;
+  const fraisEnedis  = enedisActif ? enedisfrais : 0;
+  const total        = equipement + installation + fraisEnedis;
+  const ttc          = total * 1.20;
+
+  const ca      = +$("ca").value || 0;
+  const duree   = +$("duree").value || 0;
+  const freq    = +$("freq").value || 0;
+  const denrees = +$("denrees").value || 0;
+  const remise  = +$("remise").value || 0;
+
+  const pertePertes = ca*duree + denrees + remise;
+
+  // breakdown
+  $("breakdown").innerHTML =
+    li("Équipement &amp; livraison ("+kwh+" kWh)", eur(equipement)) +
+    (installation>0 ? li("Installation &amp; génie civil", eur(installation)) : "") +
+    (fraisEnedis>0  ? li("Raccordement réseau ENEDIS", eur(fraisEnedis)) : "") +
+    li("Total installé HT", eur(total), true) +
+    li("Soit TTC (TVA 20 %)", eur(ttc));
+
+  $("r-total").textContent = eur(total);
+  $("r-perte").textContent = eur(pertePertes);
+
+  // ROI
+  if(pertePertes>0){
+    const nb = total / pertePertes;
+    $("r-coupures").innerHTML = (nb<10 ? nb.toFixed(1) : Math.round(nb)) + '<small> coupures</small>';
+    $("r-annees").textContent = anneesTxt(nb, freq);
+
+    // verdict basé sur années
+    const a = freq>0 ? nb/freq : 999;
+    const v = $("verdict"); const vt = $("verdict-txt");
+    v.className = "verdict";
+    if(a <= 3){ v.classList.add("good"); v.querySelector('b').textContent="Rentabilité express";
+      vt.textContent=" L'investissement est couvert en moins de 3 ans par les seules coupures évitées. Argument massue."; }
+    else if(a <= 6){ v.classList.add("good"); v.querySelector('b').textContent="Très bon investissement";
+      vt.textContent=" Amorti en quelques années, hors gains supplémentaires (effacement, autoconsommation, image)."; }
+    else if(a <= 10){ v.classList.add("mid"); v.querySelector('b').textContent="Rentable sur la durée";
+      vt.textContent=" Le retour se fait sur le moyen terme — la sérénité et la continuité d'activité font le reste."; }
+    else { v.classList.add("long"); v.querySelector('b').textContent="Amortissement long";
+      vt.textContent=" Sur les seules coupures, le retour est long : ajustez le dimensionnement ou valorisez aussi l'autoconsommation / l'effacement."; }
+  } else {
+    $("r-coupures").innerHTML = "—<small> coupures</small>";
+    $("r-annees").textContent = "—";
+  }
+
+  // ENEDIS
+  $("enedis").classList.toggle("show", enedisActif);
+
+  // résilience
+  $("resil-txt").textContent = "à chaque coupure, votre site continue de tourner : ~"+eur(pertePertes)+" sauvés à chaque fois, clients servis, image préservée. C'est la valeur que vos concurrents non équipés perdent.";
+}
+
+function li(lab,val,total){
+  return '<div class="li'+(total?' total':'')+'"><span class="lab">'+lab+'</span><span class="val">'+val+'</span></div>';
+}
+
+// listeners
+sel.addEventListener('change', appliqueProduit);
+['capacite','prixkwh','ca','duree','freq','denrees','remise','marge','transport','grue','dalle','pose','raccord','miseservice','etude','enedisfrais']
+  .forEach(id=>$(id).addEventListener('input', calcule));
+
+// init
+appliqueProduit();
+</script>
+</body>
+</html>
